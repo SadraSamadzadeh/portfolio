@@ -28,7 +28,7 @@ const LandingSummary = () => {
         </Lower>
     </Container>
         <Image>
-            <img src="./src/assets/my-image.png" alt="sadra" />
+            <img src="./my-image.png" alt="sadra" />
         </Image>
         
     </Main>
