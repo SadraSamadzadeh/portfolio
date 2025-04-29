@@ -5,16 +5,16 @@ export const GlobalStyle = createGlobalStyle`
 
 	${fonts}
 
-	html, body, #root {
-		height: 100%;
-		margin: 0;
+	html, body {
+		margin: 20px;
 		padding:0;
 		font-family: 'Barlow Semi Condensed', sans-serif;
-		overflow: hidden;
 		font-size: 18px;
 		color: ${p => p.theme.colors.primary};
-		background-color: ${p => p.theme.colors.primary};
+		background-color: ${p => p.theme.colors.background};
+		font-family: 'Fira Code', monospace;
 	}
+
 
 	* {
 		box-sizing: border-box;
@@ -32,7 +32,7 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	label {
-		color: ${p => p.theme.colors.secondary};
+		color: ${p => p.theme.colors.primary};
 		font-size: 14px;
 		pointer-events: none;
 	}

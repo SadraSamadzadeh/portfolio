@@ -1,9 +1,9 @@
-import React from 'react'
+import LandingSummary from '../../_components/LandingSummary';
 
 const index = () => {
   return (
-    <div>index</div>
+    <div><LandingSummary/></div>
   )
 }
 
-export default index
+export default index;
