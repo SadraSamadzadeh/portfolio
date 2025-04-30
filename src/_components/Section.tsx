@@ -30,7 +30,7 @@ const Header = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
     gap: 10px;
     border-bottom: 1px solid ${p => p.theme.colors.primaryLighter};
     border-top: 1px solid ${p => p.theme.colors.primaryLighter};

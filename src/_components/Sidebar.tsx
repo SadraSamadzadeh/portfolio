@@ -22,8 +22,12 @@ const Sidebar = () => {
 }
 
 const Main = styled.div`
-    max-width: 10%;
-    border: 1px solid ${p => p.theme.colors.primaryLighter};
+    min-width: 20%;
+    max-width: 30%;
+    border-bottom: 1px solid ${p => p.theme.colors.primaryLighter};
+    border-right: 1px solid ${p => p.theme.colors.primaryLighter};
+    border-left: 1px solid ${p => p.theme.colors.primaryLighter};
+
     height: 100%;
     display: flex;
     flex-direction: column;

@@ -1,21 +1,32 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Icons } from '../Icons/Icons'
+import { theme } from '../style/theme';
+import { useAtomValue, useSetAtom } from 'jotai';
+import { active } from '../atoms/folder';
+import { contentManager } from '../atoms/general';
 
 const Folder = ({title, color, items}: {title: string, color: string, items: string[]}) => {
     const [show, setShow] = useState(true);
+    const setActive = useSetAtom(active);
+    const setContent = useSetAtom(contentManager);
+    const isActive = useAtomValue(active);
+    const clickFolder = () => {
+        setShow(!show);
+        setActive(title);
+    }
   return (
     <Container>
-        <MainContainer onClick={() => setShow(!show)}>
+        <MainContainer onClick={() => clickFolder()}>
         <Icon>
-            <Icons.ArrowRight style={show ? {transform: 'rotate(90deg)'} : {}} />
+            <Icons.ArrowRight style={!show ? {transform: 'rotate(90deg)'} : {}} />
         </Icon>
 
         <Icon>
             <Icons.Folder />
         </Icon>
         
-        <Title>
+        <Title style={isActive === title ? {color: `${theme.colors.white}`} : {}}>
             {title}
         </Title>
         </MainContainer>
@@ -31,7 +42,7 @@ const Folder = ({title, color, items}: {title: string, color: string, items: str
              <Icon>
                  <Icons.File />
              </Icon>
-                <Item key={index}>
+                <Item onClick={() => setContent(item)} key={index}>
                     {item}
                 </Item>
                 </MainContainer>
