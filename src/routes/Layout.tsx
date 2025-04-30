@@ -3,6 +3,7 @@ import Navbar from '../_components/Navbar'
 import Home from './home'
 import { useAtom } from 'jotai';
 import { page } from '../atoms/general'
+import AboutMe from './about';
 
 const Layout = () => {
   const [content] = useAtom(page);
@@ -11,6 +12,7 @@ const Layout = () => {
     <MainContanier>
         <Navbar />
         {content === '_hello' && <Home />}
+        {content === '_about-me' && <AboutMe />}
     </MainContanier>
     </>
   )

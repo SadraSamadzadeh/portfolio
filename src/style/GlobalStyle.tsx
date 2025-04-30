@@ -10,10 +10,11 @@ export const GlobalStyle = createGlobalStyle`
 		padding:0;
 		font-family: 'Barlow Semi Condensed', sans-serif;
 		font-size: 18px;
-		color: ${p => p.theme.colors.primary};
+		color: ${p => p.theme.colors.textPrimary};
 		background-color: ${p => p.theme.colors.background};
 		font-family: 'Fira Code', monospace;
 		overflow-y: hidden;
+		
 	}
 
 

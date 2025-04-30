@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { theme } from '../style/theme'
-import { page, ViewType } from '../atoms/general'
+import { mobileAtom, page, ViewType } from '../atoms/general'
 import { useAtom } from 'jotai'
 const Navbar = () => {
+        const mobile = useAtom(mobileAtom);
     const [currentView, setView] = useAtom(page);
     const navItems: ViewType[] = ['_hello', '_about-me', '_projects', '_contact-me'];
   return (
@@ -13,13 +14,13 @@ const Navbar = () => {
             sadra-samadzadeh
         </Item>
         {navItems.filter((item) => item !== '_contact-me').map((item) => (
-            <Item key={item} active={currentView === item} onClick={() => setView(item)}>{item}</Item>
+            <Item style={mobile ? {display: 'hidden'} : {}} key={item} active={currentView === item} onClick={() => setView(item)}>{item}</Item>
         ))}
         </NavOptionsRight>
 
-        <Item active={currentView === '_contact-me'} onClick={() => setView('_contact-me')} style={{borderRight: 'none', borderLeft: `1px solid ${theme.colors.primaryLighter}`}}>
+        {/* <Item style={mobile ? {display: 'hidden'} : {}} active={currentView === '_contact-me'} onClick={() => setView('_contact-me')} style={{borderRight: 'none', borderLeft: `1px solid ${theme.colors.primaryLighter}`}}>
             _contact-me
-        </Item>
+        </Item> */}
     </Container>
   )
 }

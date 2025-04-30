@@ -1,34 +1,37 @@
 import React from 'react'
 import styled from 'styled-components'
 import { theme } from '../style/theme'
+import { useAtom, useAtomValue } from 'jotai'
+import { mobileAtom } from '../atoms/general'
 
 const LandingSummary = () => {
+    const mobile = useAtomValue(mobileAtom);
   return (
-    <Main>
-        <Container>
+    <Main style={mobile ? {flexDirection: 'column-reverse', padding: '10px'} : {}}>
+        <Container style={mobile ? {marginTop: '20px', marginBottom: '20px'} : {}}>
         <Top>
             Hi all. I am 
         </Top>
-        <Name>
+        <Name style={mobile ? {fontSize: '40px'} : {}}>
             Sadra Samadzadeh
         </Name>
-        <Role>
+        <Role style={mobile ? {fontSize: '20px'} : {}}>
             &gt; Full Stack Developer
         </Role>
         <Lower>
-            <Comment>
+            <Comment style={mobile ? {fontSize: '15px'} : {}}>
                 // Happy to have you here
             </Comment>
-            <Comment>
+            <Comment style={mobile ? {fontSize: '15px'} : {}}>
                 // find my profile on github: 
             </Comment>
-            <GithubLink>
+            <GithubLink style={mobile ? {fontSize: '15px'} : {}}>
                 <span style={{color: `${theme.colors.purple}`}}>const</span> <span style={{color: `${theme.colors.green}`}} >githubLink</span> = <a href='https://github.com/SadraSamadzadeh' target='_blank' style={{color: `${theme.colors.pink}`}}>"https://github.com/SadraSamadzadeh"</a>
             </GithubLink>
         </Lower>
     </Container>
-        <Image>
-            <img src="./my-image.png" alt="sadra" />
+        <Image style={mobile ? {marginTop: '20px', marginBottom: '20px', width: '60%', height: '60%'} : {}}>
+            <img width={mobile ? '100%' : '50%'} src="./my-image.png" alt="sadra" />
         </Image>
         
     </Main>
@@ -40,7 +43,6 @@ const Main = styled.div`
     height: 100%;
     padding: 150px;
     display: flex;
-    flex-direction: row;
     align-items: center;
 `
 const Image = styled.div`
