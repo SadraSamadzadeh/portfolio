@@ -13,7 +13,7 @@ const CodeText = () => {
             ))}
         </SideNumbers>
         <Text>
-            /** <br/> * About me <br/> I have 5 years of experience <br/> in web development <br/> and I am currently <br/> working as a frontend developer <br/> **/
+            /** <br/> * About me <br/>* I have 3 years of experience <br/>* in web development <br/>* and I am currently <br/>* working as a full stack developer <br/> **/
         </Text>
     </Main>
   )
