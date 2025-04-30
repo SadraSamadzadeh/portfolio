@@ -1,25 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 import { theme } from '../style/theme'
+import { page, ViewType } from '../atoms/general'
+import { useAtom } from 'jotai'
 const Navbar = () => {
+    const [currentView, setView] = useAtom(page);
+    const navItems: ViewType[] = ['_hello', '_about-me', '_projects', '_contact-me'];
   return (
     <Container>
         <NavOptionsRight>
         <Item style={{minWidth: '300px'}}>
             sadra-samadzadeh
         </Item>
-        <Item>
-            _hello
-        </Item>
-        <Item>
-            _about-me
-        </Item>
-        <Item>
-            _projects
-        </Item>
+        {navItems.filter((item) => item !== '_contact-me').map((item) => (
+            <Item key={item} active={currentView === item} onClick={() => setView(item)}>{item}</Item>
+        ))}
         </NavOptionsRight>
 
-        <Item style={{borderRight: 'none', borderLeft: `1px solid ${theme.colors.primaryLighter}`}}>
+        <Item active={currentView === '_contact-me'} onClick={() => setView('_contact-me')} style={{borderRight: 'none', borderLeft: `1px solid ${theme.colors.primaryLighter}`}}>
             _contact-me
         </Item>
     </Container>
@@ -36,9 +34,11 @@ const NavOptionsRight = styled.div`
     display: flex;
     align-items: center;
 `
-const Item = styled.a`
+const Item = styled.a<{active?: boolean}>`
     color: ${p => p.theme.colors.textPrimary};
-    border-right: 1px solid ${p => p.theme.colors.primaryLighter};
+    border-bottom: 1px solid ${({ active }) => (active ? theme.colors.highlight : 'transparent')};
     padding: 15px 25px;
+    cursor: pointer;
+
 `
 export default Navbar

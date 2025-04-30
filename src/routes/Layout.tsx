@@ -1,13 +1,16 @@
 import styled from 'styled-components'
 import Navbar from '../_components/Navbar'
 import Home from './home'
+import { useAtom } from 'jotai';
+import { page } from '../atoms/general'
 
 const Layout = () => {
+  const [content] = useAtom(page);
   return (
     <>
     <MainContanier>
         <Navbar />
-        <Home />
+        {content === '_hello' && <Home />}
     </MainContanier>
     </>
   )

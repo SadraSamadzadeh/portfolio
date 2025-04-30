@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
 		color: ${p => p.theme.colors.primary};
 		background-color: ${p => p.theme.colors.background};
 		font-family: 'Fira Code', monospace;
+		overflow-y: hidden;
 	}
 
 
