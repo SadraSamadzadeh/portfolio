@@ -16,10 +16,11 @@ const SecondNav = () => {
 
 const Main = styled.div`
     width: 100%;
+    border-bottom: 1px solid ${p => p.theme.colors.primaryLighter};
+
 `;
 const FileContainer = styled.div`
     width: 15%;
-    border-bottom: 1px solid ${p => p.theme.colors.primaryLighter};
     border-top: 1px solid ${p => p.theme.colors.primaryLighter};
     border-right: 1px solid ${p => p.theme.colors.primaryLighter};
     padding: 15px;

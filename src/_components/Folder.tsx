@@ -34,7 +34,7 @@ const Folder = ({title, color, items}: {title: string, color: string, items: str
         <Items>
        
             {items.map((item, index) => (
-                <MainContainer>
+            <MainContainer key={index}>
                     <Icon>
             <div />
              </Icon>

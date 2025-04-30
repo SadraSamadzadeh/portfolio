@@ -9,7 +9,7 @@ const Section = ({title, children} : {title: string, children?: React.ReactNode}
     <Container>
             <Header>
             <Icon>
-                <Icons.ArrowRight />
+                <Icons.ArrowRight style={{transform: 'rotate(90deg)'}} />
             </Icon>
             <Title>
                 {title}

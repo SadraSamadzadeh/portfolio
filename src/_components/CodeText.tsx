@@ -19,9 +19,11 @@ const CodeText = () => {
   )
 }
 const Main = styled.div`
-    width: 50%;
+    width: 57%;
     padding: 20px 50px 0 50px;
     display: flex;
+    gap: 50px;
+    height: 100%;
 `
 const SideNumbers = styled.div`
     display: flex;

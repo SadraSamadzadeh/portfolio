@@ -14,7 +14,7 @@ const Navbar = () => {
             sadra-samadzadeh
         </Item>
         {navItems.filter((item) => item !== '_contact-me').map((item) => (
-            <Item style={mobile ? {display: 'hidden'} : {}} key={item} active={currentView === item} onClick={() => setView(item)}>{item}</Item>
+            <Item  key={item} active={currentView === item} onClick={() => setView(item)}>{item}</Item> 
         ))}
         </NavOptionsRight>
 
