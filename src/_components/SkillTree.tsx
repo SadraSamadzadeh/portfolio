@@ -6,6 +6,7 @@ import { Icons } from '../Icons/Icons'
 const SkillTree = () => {
   return (
     <Main>
+      <Header>Skills & Stack</Header>
       <Group>
       <Skill color='#071e24' IconSkill={<Icons.React />} name="React"></Skill>
         <Skill IconSkill={<Icons.Typescipt />} name="Typescript" color='#0d2236'></Skill>
@@ -29,7 +30,11 @@ const SkillTree = () => {
     </Main>
   )
 }
-
+const Header = styled.div`
+    font-size: 25px;
+    font-weight: bold;
+    color: ${p => p.theme.colors.white};
+`
 const Main = styled.div`
     display: flex;
     flex-direction: column;
