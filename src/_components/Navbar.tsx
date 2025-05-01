@@ -4,7 +4,7 @@ import { theme } from '../style/theme'
 import { mobileAtom, page, ViewType } from '../atoms/general'
 import { useAtom } from 'jotai'
 const Navbar = () => {
-        const mobile = useAtom(mobileAtom);
+    const mobile = useAtom(mobileAtom);
     const [currentView, setView] = useAtom(page);
     const navItems: ViewType[] = ['_hello', '_about-me', '_projects', '_contact-me'];
   return (
